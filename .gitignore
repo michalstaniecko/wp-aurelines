@@ -50,6 +50,9 @@ wp-config.php
 ### Example user template template
 ### Example user template
 
+# Environment variables
+.env
+
 # IntelliJ project files
 .idea
 *.iml
