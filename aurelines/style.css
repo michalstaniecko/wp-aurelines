@@ -12,3 +12,26 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aurelines
 */
+
+/* Sticky header z-index */
+[style*="position:sticky"] {
+	z-index: 100;
+}
+
+/* Responsive columns — stack on mobile */
+@media (max-width: 781px) {
+	.wp-block-columns {
+		flex-direction: column !important;
+	}
+
+	.wp-block-column {
+		flex-basis: 100% !important;
+	}
+}
+
+/* Responsive hero heading */
+@media (max-width: 600px) {
+	#home h1 {
+		font-size: clamp(2rem, 8vw, 3rem) !important;
+	}
+}

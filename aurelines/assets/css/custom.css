@@ -1,0 +1,520 @@
+/**
+ * Aurelines — Custom styles
+ * Modern redesign: badges, pill buttons, transparent header, rounded cards.
+ */
+
+/* ─── Smooth scroll ─── */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ─── Scroll reveal animations ─── */
+.aurelines-reveal {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.aurelines-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.aurelines-reveal-delay-1 { transition-delay: 0.15s; }
+.aurelines-reveal-delay-2 { transition-delay: 0.3s; }
+.aurelines-reveal-delay-3 { transition-delay: 0.45s; }
+
+/* ─── Reusable badge/pill ─── */
+.aurelines-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Badge variant: hero (transparent on dark) */
+.aurelines-badge--hero {
+    background: rgba(255, 243, 214, 0.12);
+    color: #E8A838;
+}
+
+/* Badge variant: section (light on white bg) */
+.aurelines-badge--section {
+    background: var(--wp--preset--color--accent-light, #FFF3D6);
+    color: var(--wp--preset--color--accent, #E8A838);
+}
+
+/* ─── Reusable card style ─── */
+.aurelines-card {
+    background: var(--wp--preset--color--surface, #FFFFFF);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(31, 63, 174, 0.06);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.35s ease;
+}
+
+.aurelines-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px rgba(31, 63, 174, 0.12);
+}
+
+/* ─── Transparent Header ─── */
+.aurelines-header {
+    background-color: transparent !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Pull hero up behind the sticky transparent header */
+#home {
+    margin-top: -65px;
+}
+
+#home .wp-block-cover {
+    padding-top: calc(var(--wp--preset--spacing--70) + 65px) !important;
+}
+
+.aurelines-header.is-scrolled {
+    background-color: rgba(255, 255, 255, 0.97) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Header nav list spacing */
+.aurelines-header .wp-block-navigation ul {
+    gap: 2rem;
+}
+
+/* Header nav link styling — white on hero, dark when scrolled */
+.aurelines-header .wp-block-navigation a,
+.aurelines-header .wp-block-navigation .wp-block-navigation-item__content {
+    position: relative;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+
+/* Header nav links — dark when scrolled */
+.aurelines-header.is-scrolled .wp-block-navigation a,
+.aurelines-header.is-scrolled .wp-block-navigation .wp-block-navigation-item__content {
+    color: var(--wp--preset--color--text, #1A1A2E) !important;
+}
+
+.aurelines-header .wp-block-navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--wp--preset--color--accent, #E8A838);
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.aurelines-header .wp-block-navigation a:hover::after {
+    width: 100%;
+}
+
+.aurelines-header .wp-block-navigation a:hover {
+    color: var(--wp--preset--color--accent, #E8A838) !important;
+}
+
+/* Header site title (used as logo text) */
+.aurelines-header-logo a,
+.aurelines-header .wp-block-site-title a {
+    color: #fff !important;
+    font-family: 'Sora', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.aurelines-header.is-scrolled .aurelines-header-logo a,
+.aurelines-header.is-scrolled .wp-block-site-title a {
+    color: var(--wp--preset--color--primary, #1F3FAE) !important;
+}
+
+/* ─── Hero section ─── */
+#home .wp-block-cover__background {
+    background: linear-gradient(
+        160deg,
+        #0D1640 0%,
+        #162B7A 30%,
+        #1F3FAE 55%,
+        #2a4fd4 80%,
+        #1F3FAE 100%
+    ) !important;
+}
+
+/* Hero decorative elements */
+#home .wp-block-cover {
+    position: relative;
+    overflow: hidden;
+}
+
+#home .wp-block-cover::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(232, 168, 56, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#home .wp-block-cover::after {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Hero H1 */
+#home h1 {
+    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero subtitle */
+#home .aurelines-hero-subtitle {
+    font-weight: 300;
+    font-size: 1.25rem !important;
+    opacity: 0.85;
+    letter-spacing: 0.02em;
+    max-width: 540px;
+}
+
+/* Ghost button (outline, white border) */
+.aurelines-ghost-btn .wp-block-button__link {
+    background: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 50px !important;
+    color: #fff !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+}
+
+.aurelines-ghost-btn .wp-block-button__link:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    transform: translateY(-2px);
+}
+
+/* Solid CTA button in hero */
+#home .wp-element-button {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    box-shadow: 0 4px 20px rgba(232, 168, 56, 0.3);
+}
+
+#home .wp-element-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(232, 168, 56, 0.45);
+}
+
+/* ─── About section ─── */
+#o-nas {
+    position: relative;
+}
+
+#o-nas p {
+    color: var(--wp--preset--color--muted, #6B7194);
+}
+
+/* About image: rounded with soft shadow */
+.aurelines-about-image img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    background-color: var(--wp--preset--color--background-alt, #F4F5FC);
+    border-radius: 20px !important;
+    box-shadow: 0 24px 48px rgba(31, 63, 174, 0.1);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.aurelines-about-image:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 32px 64px rgba(31, 63, 174, 0.14);
+}
+
+/* ─── Mission cards ─── */
+#misja .wp-block-column {
+    position: relative;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.35s ease;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(31, 63, 174, 0.06);
+}
+
+#misja .wp-block-column:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px rgba(31, 63, 174, 0.12);
+}
+
+/* Mission icon circles */
+.aurelines-icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin: 0 auto var(--wp--preset--spacing--20, 1rem);
+}
+
+.aurelines-icon-circle svg {
+    width: 28px;
+    height: 28px;
+}
+
+.aurelines-icon-circle--fire {
+    background: rgba(232, 168, 56, 0.12);
+    color: #E8A838;
+}
+
+.aurelines-icon-circle--shield {
+    background: rgba(31, 63, 174, 0.1);
+    color: #1F3FAE;
+}
+
+.aurelines-icon-circle--growth {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+}
+
+/* Mission section subtitle */
+#misja > p {
+    color: var(--wp--preset--color--muted, #6B7194);
+}
+
+/* ─── Contact section ─── */
+
+/* Contact form card */
+.aurelines-form-card {
+    background: var(--wp--preset--color--background-alt, #F4F5FC);
+    border-radius: 20px;
+    padding: 3rem;
+}
+
+/* Contact form */
+.aurelines-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.aurelines-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+.aurelines-form-field label {
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--wp--preset--color--muted, #6B7194);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.aurelines-form-field input,
+.aurelines-form-field textarea {
+    padding: 0.875rem 1rem;
+    border: 1.5px solid #E2E4EF;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    background: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aurelines-form-field input:focus,
+.aurelines-form-field textarea:focus {
+    outline: none;
+    border-color: var(--wp--preset--color--primary, #1F3FAE);
+    box-shadow: 0 0 0 4px rgba(31, 63, 174, 0.08);
+}
+
+.aurelines-contact-form .wp-element-button {
+    width: 100%;
+    cursor: pointer;
+    padding: 0.875rem 2.25rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.aurelines-contact-form .wp-element-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(232, 168, 56, 0.3);
+}
+
+/* Contact info styling */
+#kontakt .wp-block-column:first-child p {
+    color: var(--wp--preset--color--muted, #6B7194);
+}
+
+/* Contact info icons */
+.aurelines-contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--wp--preset--color--accent-light, #FFF3D6);
+    color: var(--wp--preset--color--accent, #E8A838);
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+}
+
+.aurelines-contact-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.aurelines-contact-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* ─── Form messages ─── */
+.aurelines-form-message {
+    padding: 0.875rem 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+}
+
+.aurelines-form-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-left: 3px solid #4caf50;
+}
+
+.aurelines-form-error {
+    background-color: #fce4ec;
+    color: #c62828;
+    border-left: 3px solid #ef5350;
+}
+
+/* ─── Footer ─── */
+.aurelines-footer {
+    background-color: #0D1640 !important;
+}
+
+.aurelines-footer .wp-block-columns {
+    margin-bottom: 0;
+}
+
+.aurelines-footer p,
+.aurelines-footer a {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 0.875rem;
+}
+
+.aurelines-footer a:hover {
+    color: var(--wp--preset--color--accent, #E8A838) !important;
+}
+
+.aurelines-footer .wp-block-site-title a {
+    color: #fff !important;
+    font-family: 'Sora', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+.aurelines-footer .wp-block-heading {
+    color: #fff !important;
+}
+
+.aurelines-footer .wp-block-navigation a {
+    color: rgba(255, 255, 255, 0.6) !important;
+    text-decoration: none;
+}
+
+.aurelines-footer .wp-block-navigation a:hover {
+    color: var(--wp--preset--color--accent, #E8A838) !important;
+}
+
+.aurelines-footer-desc {
+    opacity: 0.7;
+}
+
+.aurelines-footer-copyright {
+    opacity: 0.5;
+}
+
+.aurelines-footer .wp-block-separator {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer social icons */
+.aurelines-footer .wp-block-social-links a {
+    opacity: 0.5;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.aurelines-footer .wp-block-social-links a:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+/* ─── Global refinements ─── */
+
+/* Selection color */
+::selection {
+    background-color: rgba(232, 168, 56, 0.2);
+    color: #1A1A2E;
+}
+
+/* Smooth transitions on all links */
+a {
+    transition: color 0.25s ease;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 781px) {
+    .aurelines-form-card {
+        padding: 1.5rem;
+    }
+
+    #home .wp-block-cover::before,
+    #home .wp-block-cover::after {
+        display: none;
+    }
+
+    .aurelines-hero-subtitle {
+        font-size: 1.0625rem !important;
+    }
+
+    .aurelines-contact-row span:not(.aurelines-contact-icon) {
+        font-size: 0.875rem;
+    }
+}
