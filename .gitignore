@@ -35,8 +35,7 @@ wp-config.php
 # Log files
 *.log
 
-# htaccess
-/.htaccess
+# htaccess — both .htaccess (prod) and .htaccess.local (dev) are tracked
 
 # All plugins
 #

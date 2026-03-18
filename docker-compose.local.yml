@@ -4,3 +4,4 @@ services:
       - "${WP_PORT:-8080}:80"
     volumes:
       - ./aurelines:/var/www/html/wp-content/themes/aurelines
+      - ./.htaccess.local:/var/www/html/.htaccess
