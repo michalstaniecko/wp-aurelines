@@ -38,10 +38,10 @@ html {
     font-family: 'DM Sans', sans-serif;
 }
 
-/* Badge variant: hero (transparent on dark) */
+/* Badge variant: hero (blue on light) */
 .aurelines-badge--hero {
-    background: rgba(255, 243, 214, 0.12);
-    color: #E8A838;
+    background: rgba(31, 63, 174, 0.1);
+    color: #1F3FAE;
 }
 
 /* Badge variant: section (light on white bg) */
@@ -118,9 +118,9 @@ header.wp-block-template-part:has(.aurelines-header) {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     font-size: 0.8125rem !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     font-family: 'DM Sans', sans-serif;
-    color: #fff !important;
+    color: #1F3FAE !important;
     transition: color 0.3s ease;
 }
 
@@ -152,7 +152,7 @@ header.wp-block-template-part:has(.aurelines-header) {
 /* Header site title (used as logo text) */
 .aurelines-header-logo a,
 .aurelines-header .wp-block-site-title a {
-    color: #fff !important;
+    color: #1F3FAE !important;
     font-family: 'Sora', sans-serif !important;
     font-weight: 700 !important;
     font-size: 1.25rem !important;
@@ -171,11 +171,11 @@ header.wp-block-template-part:has(.aurelines-header) {
 #home .wp-block-cover__background {
     background: linear-gradient(
         160deg,
-        #0D1640 0%,
-        #162B7A 30%,
-        #1F3FAE 55%,
-        #2a4fd4 80%,
-        #1F3FAE 100%
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(250, 251, 254, 0.88) 30%,
+        rgba(255, 255, 255, 0.85) 55%,
+        rgba(245, 247, 255, 0.88) 80%,
+        rgba(255, 255, 255, 0.90) 100%
     ) !important;
 }
 
@@ -198,7 +198,7 @@ header.wp-block-template-part:has(.aurelines-header) {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(232, 168, 56, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(31, 63, 174, 0.06) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;
@@ -211,7 +211,7 @@ header.wp-block-template-part:has(.aurelines-header) {
     left: -10%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(31, 63, 174, 0.03) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;
@@ -219,7 +219,7 @@ header.wp-block-template-part:has(.aurelines-header) {
 
 /* Hero H1 */
 #home h1 {
-    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 40px rgba(255, 255, 255, 0.4);
 }
 
 /* Hero subtitle */
@@ -231,18 +231,18 @@ header.wp-block-template-part:has(.aurelines-header) {
     max-width: 540px;
 }
 
-/* Ghost button (outline, white border) */
+/* Ghost button (outline, blue border) */
 .aurelines-ghost-btn .wp-block-button__link {
     background: transparent !important;
-    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border: 2px solid rgba(31, 63, 174, 0.3) !important;
     border-radius: 50px !important;
-    color: #fff !important;
+    color: #1F3FAE !important;
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
 }
 
 .aurelines-ghost-btn .wp-block-button__link:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: rgba(255, 255, 255, 0.6) !important;
+    background: rgba(31, 63, 174, 0.08) !important;
+    border-color: rgba(31, 63, 174, 0.6) !important;
     transform: translateY(-2px);
 }
 
@@ -576,7 +576,7 @@ a {
         background: transparent;
         border: none;
         cursor: pointer;
-        color: #fff !important;
+        color: #1F3FAE !important;
     }
 
     .aurelines-header .wp-block-navigation__responsive-container-open svg {
