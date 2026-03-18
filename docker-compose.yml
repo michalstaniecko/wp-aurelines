@@ -1,13 +1,14 @@
 services:
   wordpress:
-    image: wordpress:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: ${DB_NAME}
       WORDPRESS_DB_USER: ${DB_USER}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - ./aurelines:/var/www/html/wp-content/themes/aurelines
       - wp_uploads:/var/www/html/wp-content/uploads
     depends_on:
       - db
