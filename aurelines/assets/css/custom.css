@@ -179,6 +179,12 @@ header.wp-block-template-part:has(.aurelines-header) {
     ) !important;
 }
 
+#home .wp-block-cover__image-background {
+    filter: blur(3px);
+    transform: scale(1.05);
+    object-fit: cover;
+}
+
 /* Hero decorative elements */
 #home .wp-block-cover {
     position: relative;

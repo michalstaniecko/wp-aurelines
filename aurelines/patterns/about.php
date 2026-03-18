@@ -41,7 +41,7 @@
 		<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
 			<!-- wp:image {"sizeSlug":"large","style":{"border":{"radius":"20px"}},"className":"aurelines-about-image"} -->
-			<figure class="wp-block-image size-large has-custom-border aurelines-about-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-placeholder.jpg' ); ?>" alt="Aurelines — zdjęcie ze szkoły" style="border-radius:20px"/></figure>
+			<figure class="wp-block-image size-large has-custom-border aurelines-about-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/akrobatka.png' ); ?>" alt="Akrobatka na szarfach powietrznych — Aurelines" style="border-radius:20px"/></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->

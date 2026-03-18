@@ -6,9 +6,10 @@
  * Keywords: hero, home
  */
 ?>
-<!-- wp:cover {"customOverlayColor":"#1F3FAE","minHeight":100,"minHeightUnit":"vh","isDark":true,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() . '/assets/images/akrobatka.png' ); ?>","dimRatio":80,"customOverlayColor":"#1F3FAE","minHeight":100,"minHeightUnit":"vh","isDark":true,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
 <div class="wp-block-cover alignfull is-dark" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--30);min-height:100vh" id="home">
-	<span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim" style="background-color:#1F3FAE"></span>
+	<span aria-hidden="true" class="wp-block-cover__background has-background-dim-80 has-background-dim" style="background-color:#1F3FAE"></span>
+	<img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/akrobatka.png' ); ?>" data-object-fit="cover" />
 	<div class="wp-block-cover__inner-container">
 		<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 		<div class="wp-block-group">
