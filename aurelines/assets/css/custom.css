@@ -69,6 +69,7 @@ header.wp-block-template-part:has(.aurelines-header) {
     position: sticky;
     top: 0;
     z-index: 100;
+    height: 80px;
 }
 
 /* ─── Transparent Header ─── */
@@ -83,11 +84,11 @@ header.wp-block-template-part:has(.aurelines-header) {
 
 /* Pull hero up behind the sticky transparent header */
 #home {
-    margin-top: -65px;
+    margin-top: -80px;
 }
 
 #home .wp-block-cover {
-    padding-top: calc(var(--wp--preset--spacing--70) + 65px) !important;
+    padding-top: calc(var(--wp--preset--spacing--70) + 80px) !important;
 }
 
 .aurelines-header.is-scrolled {
@@ -549,13 +550,13 @@ a {
 /* ─── Mobile (< 768px) ─────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
 
-    /* Hero offset for sticky header height on mobile (76px) */
+    /* Hero offset for sticky header height on mobile */
     #home {
-        margin-top: -76px;
+        margin-top: -80px;
     }
 
     #home .wp-block-cover {
-        padding-top: calc(var(--wp--preset--spacing--50) + 76px) !important;
+        padding-top: calc(var(--wp--preset--spacing--50) + 80px) !important;
     }
 
     /* KEY FIX: hide responsive container when NOT open as overlay.
