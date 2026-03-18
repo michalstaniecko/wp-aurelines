@@ -76,10 +76,21 @@ header.wp-block-template-part:has(.aurelines-header) {
 .aurelines-header {
     position: static !important; /* sticky przeniesiony na <header> */
     z-index: auto !important;
-    background-color: transparent !important;
+    background-color: rgba(255, 255, 255, 0.65) !important;
+    /* backdrop-filter przeniesiony na ::before — nie może być tu,
+       bo tworzy containing block i psuje position:fixed overlay */
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.aurelines-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: -1;
 }
 
 /* Pull hero up behind the sticky transparent header */
@@ -92,7 +103,7 @@ header.wp-block-template-part:has(.aurelines-header) {
 }
 
 .aurelines-header.is-scrolled {
-    background-color: rgba(255, 255, 255, 0.97) !important;
+    background-color: rgba(255, 255, 255, 0.65) !important;
     /* backdrop-filter przeniesiony na ::before — nie może być tu,
        bo tworzy containing block i psuje position:fixed overlay */
     box-shadow: 0 1px 16px rgba(0, 0, 0, 0.06);
@@ -150,22 +161,22 @@ header.wp-block-template-part:has(.aurelines-header) {
     color: var(--wp--preset--color--accent, #E8A838) !important;
 }
 
-/* Header site title (used as logo text) */
-.aurelines-header-logo a,
-.aurelines-header .wp-block-site-title a {
-    color: #1F3FAE !important;
-    font-family: 'Sora', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 1.25rem !important;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+/* Header logo image */
+.aurelines-header-logo {
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-.aurelines-header.is-scrolled .aurelines-header-logo a,
-.aurelines-header.is-scrolled .wp-block-site-title a {
-    color: var(--wp--preset--color--primary, #1F3FAE) !important;
+.aurelines-header-logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.aurelines-header-logo-img:hover {
+    opacity: 0.85;
 }
 
 /* ─── Hero section ─── */
@@ -232,18 +243,18 @@ header.wp-block-template-part:has(.aurelines-header) {
     max-width: 540px;
 }
 
-/* Ghost button (outline, blue border) */
+/* "Poznaj nas" button (solid primary) */
 .aurelines-ghost-btn .wp-block-button__link {
-    background: transparent !important;
-    border: 2px solid rgba(31, 63, 174, 0.3) !important;
+    background: #1F3FAE !important;
+    border: 2px solid #1F3FAE !important;
     border-radius: 50px !important;
-    color: #1F3FAE !important;
+    color: #fff !important;
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
 }
 
 .aurelines-ghost-btn .wp-block-button__link:hover {
-    background: rgba(31, 63, 174, 0.08) !important;
-    border-color: rgba(31, 63, 174, 0.6) !important;
+    background: #1a3599 !important;
+    border-color: #1a3599 !important;
     transform: translateY(-2px);
 }
 
@@ -710,6 +721,10 @@ a {
     #home .wp-block-cover::before,
     #home .wp-block-cover::after {
         display: none;
+    }
+
+    #home h1 {
+        font-size: 2.25rem !important;
     }
 
     .aurelines-hero-subtitle {
