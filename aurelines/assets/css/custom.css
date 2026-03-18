@@ -64,8 +64,17 @@ html {
     box-shadow: 0 20px 48px rgba(31, 63, 174, 0.12);
 }
 
+/* ─── Sticky header — must be on <header>, not inner div ─── */
+header.wp-block-template-part:has(.aurelines-header) {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 /* ─── Transparent Header ─── */
 .aurelines-header {
+    position: static !important; /* sticky przeniesiony na <header> */
+    z-index: auto !important;
     background-color: transparent !important;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
@@ -83,9 +92,18 @@ html {
 
 .aurelines-header.is-scrolled {
     background-color: rgba(255, 255, 255, 0.97) !important;
+    /* backdrop-filter przeniesiony na ::before — nie może być tu,
+       bo tworzy containing block i psuje position:fixed overlay */
+    box-shadow: 0 1px 16px rgba(0, 0, 0, 0.06);
+}
+
+.aurelines-header.is-scrolled::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 1px 16px rgba(0, 0, 0, 0.06);
+    z-index: -1;
 }
 
 /* Header nav list spacing */
@@ -499,8 +517,185 @@ a {
     transition: color 0.25s ease;
 }
 
-/* ─── Responsive ─── */
-@media (max-width: 781px) {
+/*
+ * ─── Navigation ─────────────────────────────────────────────────────────────
+ *
+ * WP Navigation block (overlayMenu: "mobile") renders ONE set of nav items
+ * inside .wp-block-navigation__responsive-container (nested 4 levels deep).
+ *
+ * WP's built-in CSS uses 600px as its breakpoint:
+ *   < 600px  → hamburger shown, responsive-container hidden
+ *   ≥ 600px  → hamburger hidden, responsive-container shown inline
+ *
+ * We want 768px. At 600–767px we override WP:
+ *   < 768px  → hamburger shown, responsive-container hidden (unless .is-menu-open)
+ *   ≥ 768px  → hamburger hidden, inline nav shown (WP handles this)
+ *
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+/* ─── Desktop (≥ 768px): hide hamburger — WP shows inline nav above 600px ─── */
+.aurelines-header .wp-block-navigation__responsive-container-open,
+.aurelines-header .wp-block-navigation__responsive-container-close {
+    display: none !important;
+}
+
+/* ─── Mobile (< 768px) ─────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+
+    /* Hero offset for sticky header height on mobile (76px) */
+    #home {
+        margin-top: -76px;
+    }
+
+    #home .wp-block-cover {
+        padding-top: calc(var(--wp--preset--spacing--50) + 76px) !important;
+    }
+
+    /* KEY FIX: hide responsive container when NOT open as overlay.
+       Between 600–767px WP shows it as inline nav (display:block, position:relative),
+       but we want hamburger-only below 768px. */
+    .aurelines-header .wp-block-navigation__responsive-container:not(.is-menu-open) {
+        display: none !important;
+    }
+
+    /* ── Hamburger open button ── */
+    .aurelines-header .wp-block-navigation__responsive-container-open {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: #fff !important;
+    }
+
+    .aurelines-header .wp-block-navigation__responsive-container-open svg {
+        fill: currentColor;
+        width: 24px;
+        height: 24px;
+    }
+
+    .aurelines-header.is-scrolled .wp-block-navigation__responsive-container-open {
+        color: #1F3FAE !important;
+    }
+
+    /* Hide hamburger when overlay is open */
+    .aurelines-header .wp-block-navigation__responsive-container-open[aria-expanded="true"] {
+        display: none !important;
+    }
+
+    /* ── Close button: hidden by default ── */
+    .aurelines-header .wp-block-navigation__responsive-container-close {
+        display: none !important;
+    }
+
+    /* ── Full-screen overlay ── */
+    .aurelines-header .wp-block-navigation__responsive-container.is-menu-open {
+        position: fixed !important;
+        inset: 0 !important;
+        padding: 0 !important;
+        background-color: #0D1640 !important;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .aurelines-header .wp-block-navigation__responsive-container-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Close button visible only when overlay is open */
+    .aurelines-header .wp-block-navigation__responsive-container.is-menu-open
+        .wp-block-navigation__responsive-container-close {
+        position: fixed !important;
+        top: 1rem;
+        right: 1.5rem;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 10000;
+        color: #fff !important;
+    }
+
+    .aurelines-header .wp-block-navigation__responsive-container.is-menu-open
+        .wp-block-navigation__responsive-container-close svg {
+        fill: currentColor;
+        width: 24px;
+        height: 24px;
+    }
+
+    /* ── Nav item list in overlay ── */
+    .aurelines-header .wp-block-navigation__responsive-container.is-menu-open
+        .wp-block-navigation__container {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+        padding: 0 !important;
+        padding-inline-start: 0 !important;
+        margin: 0;
+        list-style: none;
+    }
+
+    /* ── Nav items in overlay ── */
+    .aurelines-header .wp-block-navigation__responsive-container.is-menu-open
+        .wp-block-navigation-item {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .aurelines-header .wp-block-navigation__responsive-container.is-menu-open
+        .wp-block-navigation-item:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* ── Nav links in overlay ── */
+    .aurelines-header .wp-block-navigation__responsive-container.is-menu-open a,
+    .aurelines-header .wp-block-navigation__responsive-container.is-menu-open
+        .wp-block-navigation-item__content {
+        display: block !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        padding: 1.25rem 2rem !important;
+        font-size: 1.5rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        color: #fff !important;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    .aurelines-header .wp-block-navigation__responsive-container.is-menu-open a:hover {
+        color: var(--wp--preset--color--accent, #E8A838) !important;
+    }
+
+    /* Hide underline pseudo-element inside overlay */
+    .aurelines-header .wp-block-navigation__responsive-container.is-menu-open a::after {
+        display: none !important;
+    }
+}
+
+/* ─── Responsive: other elements ─────────────────────────────────────────── */
+@media (max-width: 767px) {
     .aurelines-form-card {
         padding: 1.5rem;
     }

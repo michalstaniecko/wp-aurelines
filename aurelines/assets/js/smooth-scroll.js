@@ -18,6 +18,13 @@
 
 		e.preventDefault();
 
+		/* Close mobile nav overlay if open */
+		var overlay = link.closest('.wp-block-navigation__responsive-container.is-menu-open');
+		if (overlay) {
+			var closeBtn = overlay.querySelector('.wp-block-navigation__responsive-container-close');
+			if (closeBtn) closeBtn.click();
+		}
+
 		var header = document.querySelector('.aurelines-header');
 		if (!header) {
 			header = document.querySelector('[style*="position:sticky"]');
