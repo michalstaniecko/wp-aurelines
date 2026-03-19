@@ -735,3 +735,39 @@ a {
         font-size: 0.875rem;
     }
 }
+
+/* ─── Contact columns: 10-column grid ─── */
+#kontakt .wp-block-columns {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+#kontakt .wp-block-columns > .wp-block-column:first-child {
+    grid-column: 1 / 5;
+}
+
+#kontakt .wp-block-columns > .wp-block-column:last-child {
+    grid-column: 6 / 11;
+}
+
+#kontakt .wp-block-columns > .wp-block-column {
+    flex-basis: unset !important;
+    width: 100%;
+}
+
+@media (max-width: 781px) {
+    #kontakt .wp-block-columns {
+        grid-template-columns: 1fr;
+    }
+
+    #kontakt .wp-block-columns > .wp-block-column:first-child,
+    #kontakt .wp-block-columns > .wp-block-column:last-child {
+        grid-column: 1 / -1;
+    }
+
+    #kontakt .wp-block-columns > .wp-block-column:first-child {
+        text-align: center;
+    }
+}
