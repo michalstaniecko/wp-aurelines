@@ -22,8 +22,8 @@
 
 	<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|60"}}},"className":"aurelines-reveal"} -->
 	<div class="wp-block-columns aurelines-reveal">
-		<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
-		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
+		<!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
+		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%">
 			<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.0625rem","lineHeight":"1.8"}}} -->
 			<p style="font-size:1.0625rem;line-height:1.8">Aurelines to szkoła akrobatyki powietrznej, w&nbsp;której łączymy pasję do ruchu z&nbsp;artystycznym wyrażaniem siebie. Od lat pomagamy naszym kursantkom odkrywać własne możliwości i&nbsp;przełamywać granice.</p>
 			<!-- /wp:paragraph -->
@@ -38,8 +38,8 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
-		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
+		<!-- wp:column {"verticalAlignment":"center","width":"40%"} -->
+		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:40%">
 			<!-- wp:image {"sizeSlug":"large","style":{"border":{"radius":"20px"}},"className":"aurelines-about-image"} -->
 			<figure class="wp-block-image size-large has-custom-border aurelines-about-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/akrobatka.png' ); ?>" alt="Akrobatka na szarfach powietrznych — Aurelines" style="border-radius:20px"/></figure>
 			<!-- /wp:image -->
