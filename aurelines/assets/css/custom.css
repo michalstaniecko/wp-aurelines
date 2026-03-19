@@ -38,10 +38,10 @@ html {
     font-family: 'DM Sans', sans-serif;
 }
 
-/* Badge variant: hero (blue on light) */
+/* Badge variant: hero (transparent on dark) */
 .aurelines-badge--hero {
-    background: rgba(31, 63, 174, 0.1);
-    color: #1F3FAE;
+    background: rgba(255, 243, 214, 0.12);
+    color: #E8A838;
 }
 
 /* Badge variant: section (light on white bg) */
@@ -69,14 +69,14 @@ header.wp-block-template-part:has(.aurelines-header) {
     position: sticky;
     top: 0;
     z-index: 100;
-    height: 80px;
+    height: 112px;
 }
 
 /* ─── Transparent Header ─── */
 .aurelines-header {
     position: static !important; /* sticky przeniesiony na <header> */
     z-index: auto !important;
-    background-color: rgba(255, 255, 255, 0.65) !important;
+    background-color: transparent !important;
     /* backdrop-filter przeniesiony na ::before — nie może być tu,
        bo tworzy containing block i psuje position:fixed overlay */
     backdrop-filter: none;
@@ -88,18 +88,18 @@ header.wp-block-template-part:has(.aurelines-header) {
     content: "";
     position: absolute;
     inset: 0;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     z-index: -1;
 }
 
 /* Pull hero up behind the sticky transparent header */
 #home {
-    margin-top: -80px;
+    margin-top: -112px;
 }
 
 #home .wp-block-cover {
-    padding-top: calc(var(--wp--preset--spacing--70) + 80px) !important;
+    padding-top: calc(var(--wp--preset--spacing--70) + 112px) !important;
 }
 
 .aurelines-header.is-scrolled {
@@ -130,9 +130,9 @@ header.wp-block-template-part:has(.aurelines-header) {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     font-size: 0.8125rem !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     font-family: 'DM Sans', sans-serif;
-    color: #1F3FAE !important;
+    color: #fff !important;
     transition: color 0.3s ease;
 }
 
@@ -183,11 +183,11 @@ header.wp-block-template-part:has(.aurelines-header) {
 #home .wp-block-cover__background {
     background: linear-gradient(
         160deg,
-        rgba(255, 255, 255, 0.92) 0%,
-        rgba(250, 251, 254, 0.88) 30%,
-        rgba(255, 255, 255, 0.85) 55%,
-        rgba(245, 247, 255, 0.88) 80%,
-        rgba(255, 255, 255, 0.90) 100%
+        #162D8A 0%,
+        #1B36A0 30%,
+        #1F3FAE 55%,
+        #2a4fd4 80%,
+        #1F3FAE 100%
     ) !important;
 }
 
@@ -210,7 +210,7 @@ header.wp-block-template-part:has(.aurelines-header) {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(31, 63, 174, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(232, 168, 56, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;
@@ -223,7 +223,7 @@ header.wp-block-template-part:has(.aurelines-header) {
     left: -10%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(31, 63, 174, 0.03) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;
@@ -231,7 +231,7 @@ header.wp-block-template-part:has(.aurelines-header) {
 
 /* Hero H1 */
 #home h1 {
-    text-shadow: 0 2px 40px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero subtitle */
@@ -243,18 +243,18 @@ header.wp-block-template-part:has(.aurelines-header) {
     max-width: 540px;
 }
 
-/* "Poznaj nas" button (solid primary) */
+/* Ghost button (outline, white border) */
 .aurelines-ghost-btn .wp-block-button__link {
-    background: #1F3FAE !important;
-    border: 2px solid #1F3FAE !important;
+    background: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
     border-radius: 50px !important;
     color: #fff !important;
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
 }
 
 .aurelines-ghost-btn .wp-block-button__link:hover {
-    background: #1a3599 !important;
-    border-color: #1a3599 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
     transform: translateY(-2px);
 }
 
@@ -462,7 +462,7 @@ header.wp-block-template-part:has(.aurelines-header) {
 
 /* ─── Footer ─── */
 .aurelines-footer {
-    background-color: #0D1640 !important;
+    background-color: #1F3FAE !important;
 }
 
 .aurelines-footer .wp-block-columns {
@@ -563,11 +563,11 @@ a {
 
     /* Hero offset for sticky header height on mobile */
     #home {
-        margin-top: -80px;
+        margin-top: -112px;
     }
 
     #home .wp-block-cover {
-        padding-top: calc(var(--wp--preset--spacing--50) + 80px) !important;
+        padding-top: calc(var(--wp--preset--spacing--50) + 112px) !important;
     }
 
     /* KEY FIX: hide responsive container when NOT open as overlay.
@@ -588,7 +588,7 @@ a {
         background: transparent;
         border: none;
         cursor: pointer;
-        color: #1F3FAE !important;
+        color: #fff !important;
     }
 
     .aurelines-header .wp-block-navigation__responsive-container-open svg {

@@ -6,9 +6,9 @@
  * Keywords: hero, home
  */
 ?>
-<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() . '/assets/images/akrobatka.png' ); ?>","dimRatio":80,"customOverlayColor":"#FFFFFF","minHeight":100,"minHeightUnit":"vh","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
-<div class="wp-block-cover alignfull is-light" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--30);min-height:100vh" id="home">
-	<span aria-hidden="true" class="wp-block-cover__background has-background-dim-80 has-background-dim" style="background-color:#FFFFFF"></span>
+<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() . '/assets/images/akrobatka.png' ); ?>","dimRatio":80,"customOverlayColor":"#1F3FAE","minHeight":100,"minHeightUnit":"vh","isDark":true,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+<div class="wp-block-cover alignfull is-dark" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--30);min-height:100vh" id="home">
+	<span aria-hidden="true" class="wp-block-cover__background has-background-dim-80 has-background-dim" style="background-color:#1F3FAE"></span>
 	<img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/akrobatka.png' ); ?>" data-object-fit="cover" />
 	<div class="wp-block-cover__inner-container">
 		<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
@@ -17,12 +17,12 @@
 			<div class="aurelines-badge aurelines-badge--hero aurelines-reveal">Szkoła akrobatyki powietrznej</div>
 			<!-- /wp:html -->
 
-			<!-- wp:heading {"textAlign":"center","level":1,"textColor":"primary","style":{"typography":{"fontWeight":"300","fontSize":"4.5rem","letterSpacing":"-0.03em"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}},"className":"aurelines-reveal aurelines-reveal-delay-1"} -->
-			<h1 class="wp-block-heading has-text-align-center has-primary-color has-text-color aurelines-reveal aurelines-reveal-delay-1" style="margin-top:var(--wp--preset--spacing--30);font-weight:300;font-size:4.5rem;letter-spacing:-0.03em">Odkryj piękno ruchu w powietrzu</h1>
+			<!-- wp:heading {"textAlign":"center","level":1,"textColor":"text-light","style":{"typography":{"fontWeight":"300","fontSize":"4.5rem","letterSpacing":"-0.03em"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}},"className":"aurelines-reveal aurelines-reveal-delay-1"} -->
+			<h1 class="wp-block-heading has-text-align-center has-text-light-color has-text-color aurelines-reveal aurelines-reveal-delay-1" style="margin-top:var(--wp--preset--spacing--30);font-weight:300;font-size:4.5rem;letter-spacing:-0.03em">Odkryj piękno ruchu w powietrzu</h1>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph {"align":"center","textColor":"primary","style":{"typography":{"fontSize":"1.25rem","fontWeight":"300"},"spacing":{"margin":{"top":"var:preset|spacing|20"}}},"className":"aurelines-hero-subtitle aurelines-reveal aurelines-reveal-delay-2"} -->
-			<p class="has-text-align-center has-primary-color has-text-color aurelines-hero-subtitle aurelines-reveal aurelines-reveal-delay-2" style="margin-top:var(--wp--preset--spacing--20);font-size:1.25rem;font-weight:300">Szkoła akrobatyki powietrznej, w której łączymy pasję do ruchu z&nbsp;artystycznym wyrażaniem siebie</p>
+			<!-- wp:paragraph {"align":"center","textColor":"text-light","style":{"typography":{"fontSize":"1.25rem","fontWeight":"300"},"spacing":{"margin":{"top":"var:preset|spacing|20"}}},"className":"aurelines-hero-subtitle aurelines-reveal aurelines-reveal-delay-2"} -->
+			<p class="has-text-align-center has-text-light-color has-text-color aurelines-hero-subtitle aurelines-reveal aurelines-reveal-delay-2" style="margin-top:var(--wp--preset--spacing--20);font-size:1.25rem;font-weight:300">Szkoła akrobatyki powietrznej, w której łączymy pasję do ruchu z&nbsp;artystycznym wyrażaniem siebie</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|20"}},"className":"aurelines-reveal aurelines-reveal-delay-3"} -->
