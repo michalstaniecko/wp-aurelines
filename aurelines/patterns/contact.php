@@ -10,9 +10,7 @@
 <div class="wp-block-group alignfull has-background-background-color has-background" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--30)" id="kontakt">
 	<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}}} -->
 	<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--50)">
-		<!-- wp:html -->
-		<div class="aurelines-badge aurelines-badge--section aurelines-reveal">Kontakt</div>
-		<!-- /wp:html -->
+		<!-- wp:aurelines/badge {"text":"Kontakt","variant":"section"} /-->
 
 		<!-- wp:heading {"textAlign":"center","className":"aurelines-reveal"} -->
 		<h2 class="wp-block-heading has-text-align-center aurelines-reveal">Skontaktuj się z nami</h2>

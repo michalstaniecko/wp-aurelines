@@ -10,9 +10,7 @@
 <div class="wp-block-group alignfull has-background-alt-background-color has-background" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--30)" id="misja">
 	<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
 	<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--30)">
-		<!-- wp:html -->
-		<div class="aurelines-badge aurelines-badge--section aurelines-reveal">Nasza misja</div>
-		<!-- /wp:html -->
+		<!-- wp:aurelines/badge {"text":"Nasza misja","variant":"section"} /-->
 
 		<!-- wp:heading {"textAlign":"center","className":"aurelines-reveal"} -->
 		<h2 class="wp-block-heading has-text-align-center aurelines-reveal">Wartości, które nas napędzają</h2>

@@ -18,6 +18,27 @@ function aurelines_register_pattern_categories() {
 add_action( 'init', 'aurelines_register_pattern_categories' );
 
 /**
+ * Register custom block category.
+ */
+function aurelines_register_block_category( $categories ) {
+	return array_merge(
+		array(
+			array(
+				'slug'  => 'aurelines',
+				'title' => 'Aurelines',
+			),
+		),
+		$categories
+	);
+}
+add_filter( 'block_categories_all', 'aurelines_register_block_category' );
+
+/**
+ * Load custom blocks.
+ */
+require_once get_template_directory() . '/blocks/register-blocks.php';
+
+/**
  * Enqueue theme assets.
  */
 function aurelines_enqueue_assets() {

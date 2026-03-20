@@ -13,9 +13,7 @@
 	<div class="wp-block-cover__inner-container">
 		<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 		<div class="wp-block-group">
-			<!-- wp:html -->
-			<div class="aurelines-badge aurelines-badge--hero aurelines-reveal">Szkoła akrobatyki powietrznej</div>
-			<!-- /wp:html -->
+			<!-- wp:aurelines/badge {"text":"Szkoła akrobatyki powietrznej","variant":"hero"} /-->
 
 			<!-- wp:heading {"textAlign":"center","level":1,"textColor":"text-light","style":{"typography":{"fontWeight":"300","fontSize":"4.5rem","letterSpacing":"-0.03em"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}},"className":"aurelines-reveal aurelines-reveal-delay-1"} -->
 			<h1 class="wp-block-heading has-text-align-center has-text-light-color has-text-color aurelines-reveal aurelines-reveal-delay-1" style="margin-top:var(--wp--preset--spacing--30);font-weight:300;font-size:4.5rem;letter-spacing:-0.03em">Odkryj piękno ruchu w powietrzu</h1>
