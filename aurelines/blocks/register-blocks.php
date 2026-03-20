@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $aurelines_blocks = array(
 	'badge',
 	'contact-info',
+	'icon-circle',
 );
 
 foreach ( $aurelines_blocks as $block ) {

@@ -1,0 +1,29 @@
+.editor-styles-wrapper .aurelines-icon-circle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	margin: 0 auto var(--wp--preset--spacing--20, 1rem);
+}
+
+.editor-styles-wrapper .aurelines-icon-circle svg {
+	width: 28px;
+	height: 28px;
+}
+
+.editor-styles-wrapper .aurelines-icon-circle--fire {
+	background: rgba(232, 168, 56, 0.12);
+	color: #E8A838;
+}
+
+.editor-styles-wrapper .aurelines-icon-circle--shield {
+	background: rgba(31, 63, 174, 0.1);
+	color: #1F3FAE;
+}
+
+.editor-styles-wrapper .aurelines-icon-circle--growth {
+	background: rgba(76, 175, 80, 0.1);
+	color: #4caf50;
+}

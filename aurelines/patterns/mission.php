@@ -26,13 +26,7 @@
 	<div class="wp-block-columns">
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"border":{"radius":"16px"}},"backgroundColor":"background","className":"aurelines-card aurelines-reveal aurelines-reveal-delay-1"} -->
 		<div class="wp-block-column has-background-background-color has-background aurelines-card aurelines-reveal aurelines-reveal-delay-1" style="border-radius:16px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--30)">
-			<!-- wp:html -->
-			<div style="text-align:center">
-				<div class="aurelines-icon-circle aurelines-icon-circle--fire">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c2-2.96 0-7-1-8 0 3.038-1.773 4.741-3 6-1.226 1.26-2 3.24-2 5a6 6 0 1 0 12 0c0-1.532-1.056-3.94-2-5-1.786 3-2.791 3-4 2z"/></svg>
-				</div>
-			</div>
-			<!-- /wp:html -->
+			<!-- wp:aurelines/icon-circle {"icon":"fire"} /-->
 
 			<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20","top":"var:preset|spacing|20"}}}} -->
 			<h3 class="wp-block-heading has-text-align-center" style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)">Pasja</h3>
@@ -46,13 +40,7 @@
 
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"border":{"radius":"16px"}},"backgroundColor":"background","className":"aurelines-card aurelines-reveal aurelines-reveal-delay-2"} -->
 		<div class="wp-block-column has-background-background-color has-background aurelines-card aurelines-reveal aurelines-reveal-delay-2" style="border-radius:16px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--30)">
-			<!-- wp:html -->
-			<div style="text-align:center">
-				<div class="aurelines-icon-circle aurelines-icon-circle--shield">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-				</div>
-			</div>
-			<!-- /wp:html -->
+			<!-- wp:aurelines/icon-circle {"icon":"shield"} /-->
 
 			<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20","top":"var:preset|spacing|20"}}}} -->
 			<h3 class="wp-block-heading has-text-align-center" style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)">Bezpieczeństwo</h3>
@@ -66,13 +54,7 @@
 
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"border":{"radius":"16px"}},"backgroundColor":"background","className":"aurelines-card aurelines-reveal aurelines-reveal-delay-3"} -->
 		<div class="wp-block-column has-background-background-color has-background aurelines-card aurelines-reveal aurelines-reveal-delay-3" style="border-radius:16px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--30)">
-			<!-- wp:html -->
-			<div style="text-align:center">
-				<div class="aurelines-icon-circle aurelines-icon-circle--growth">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-				</div>
-			</div>
-			<!-- /wp:html -->
+			<!-- wp:aurelines/icon-circle {"icon":"growth"} /-->
 
 			<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20","top":"var:preset|spacing|20"}}}} -->
 			<h3 class="wp-block-heading has-text-align-center" style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)">Rozwój</h3>
