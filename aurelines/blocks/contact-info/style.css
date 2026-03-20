@@ -1,0 +1,30 @@
+/* Contact Info Block */
+.aurelines-contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--wp--preset--color--accent-light, #FFF3D6);
+    color: var(--wp--preset--color--accent, #E8A838);
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+}
+
+.aurelines-contact-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.aurelines-contact-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 781px) {
+    .aurelines-contact-row span:not(.aurelines-contact-icon) {
+        font-size: 0.875rem;
+    }
+}
