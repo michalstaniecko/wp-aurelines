@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     labels:
-      - "traefik.http.middlewares.aurelines-auth.basicauth.users=${BASIC_AUTH_USER}:${BASIC_AUTH_PASSWORD}"
+      - "traefik.http.middlewares.aurelines-auth.basicauth.users=aurelines:$2y$05$zXEfb.rMcnAWejMn0C.49.nW4pdlsaGkT5P0X96ChZnuUbLJwtApq"
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: ${DB_NAME}
